@@ -38,7 +38,6 @@ const Users = () => {
             .then((json) => {
                 setUsers(json);
             })
-            .catch(err => console.error('Error fetching users:', err));
     }, []);
 
     return (

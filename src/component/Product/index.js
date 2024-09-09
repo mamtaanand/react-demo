@@ -1,7 +1,35 @@
 import React, { useEffect, useState } from "react";
+import AddModal from "./add";
+import EditModal from "./edit";
+import DeleteModal from "../Users/delete";
 
 const Product = (props) => {
     const [product, setProduct] = useState([])
+    const [showAdd, setShowAdd] = useState(false)
+    const [showEdit, setShowEdit] = useState(false); 
+    const [currentProduct, setCurrentProduct] = useState(null);
+    const [showDelete, setShowDelete] = useState(false);
+    
+    const handleCloseAdd = () => setShowAdd(false);
+    const handleCloseEdit = () => setShowEdit(false);
+    const handleCloseDelete = () => setShowDelete(false);
+
+    const handleShowEdit = (user) => {
+        setCurrentProduct(user);
+        setShowEdit(true);
+    };
+
+    const handleShowDelete = (id) => {
+        setProduct(id);
+        setShowDelete(true);
+    };
+
+    const handleUpdateProduct = (updatedProduct) => {
+        setProduct((prevProduct) =>
+            prevProduct.map((p) => (p.id === updatedProduct.id ? updatedProduct : p))
+        );
+    };
+
 
     useEffect(() => {
         fetch('https://fakestoreapi.com/products').then(res => res.json()).then(data => {
@@ -15,9 +43,7 @@ const Product = (props) => {
             <div className="container mt-4 d-flex justify-content-between align-items-center">
                 <h3 className="me auto">Product Details</h3>
                 <div className="d-flex">
-                <button className="btn btn-primary mt-1">Add</button>
-                <button className="btn btn-warning mt-1">Edit</button>
-                <button className="btn btn-danger mt-1">Delete</button>
+                <button className="btn btn-primary mt-1" onClick={(e) => setShowAdd(true)}>Add</button>
                 </div>              
             </div>
 
@@ -39,8 +65,9 @@ const Product = (props) => {
                                             <p className="card-count" style={{ fontSize: 10 }}><b>Count:</b> {el.rating?.count || 'N/A'} </p>
                                         </div>
                                         <h6 className="card-price" style={{ fontSize: 11 }}>Price: {el.price}</h6>
-                                        <a href="#" className="btn btn-primary d-flex justify-content-center align-items-center" style={{ height: '5vh' }}><b>Buy Now</b></a>
-
+                                        <a href="#" className="btn btn-primary d-flex justify-content-center align-items-center" style={{ height: '6vh' }}><b>Buy Now</b></a>
+                                        <button className="btn btn-warning mt-2 align-item-center" style={{width: "50%"}} onClick={() => handleShowEdit(product)}>Edit</button>
+                                        <button className="btn btn-danger mt-2 align-item-center" style={{width: "50%"}} onClick={() => handleShowDelete(product.id)}>Delete</button>
                                     </div>
                                 </>
 
@@ -49,6 +76,9 @@ const Product = (props) => {
                     }
                 </div>
             </div>
+            <AddModal show={showAdd} handleClose={handleCloseAdd} />
+            <EditModal showEdit={showEdit} handleClose={handleCloseEdit} product={currentProduct} onUpdateProduct={handleUpdateProduct} />
+            <DeleteModal showDelete={showDelete} handleClose={handleCloseDelete} productId={product} />
 
         </>
     )

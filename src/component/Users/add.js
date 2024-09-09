@@ -21,7 +21,7 @@ const AddModal = ({ show, handleClose }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(formData);
-        fetch('https://fakestoreapi.com/products', {
+        fetch('https://jsonplaceholder.typicode.com/users', {
             method: "POST",
             body: JSON.stringify(formData)
         })
@@ -35,7 +35,7 @@ const AddModal = ({ show, handleClose }) => {
         <>
             <Modal show={show} onHide={handleClose} centered>
                 <Modal.Header closeButton>
-                    <Modal.Title>Add Product</Modal.Title>
+                    <Modal.Title>Add Users</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <form onSubmit={handleSubmit}>
