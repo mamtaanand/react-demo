@@ -55,7 +55,7 @@ const EditModal = ({ showEdit, handleClose, product, onUpdateProduct }) => {
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="description" className="form-label">Description</label>
-                                    <input type="text" className="form-control" id="description" name="title" value={editedProduct.description} onChange={handleChange} />
+                                    <input type="text" className="form-control" id="description" name="description" value={editedProduct.description} onChange={handleChange} />
                                 </div>
                                 <div className="mb-3">
                                 <label htmlFor="productImage" className="form-label">Product Image</label>
@@ -68,7 +68,7 @@ const EditModal = ({ showEdit, handleClose, product, onUpdateProduct }) => {
                                 </div>
                             </div>
                                 <div className="mb-3">
-                                <label htmlFor="productImage" className="form-label">Category</label>
+                                <label htmlFor="category" className="form-label">Category</label>
                                 <select className="form-select" name="category" aria-label="Default select example">
                                     <option selected>Select Category</option>
                                     <option value="2">jewelery</option>

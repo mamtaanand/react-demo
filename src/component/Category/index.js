@@ -11,7 +11,7 @@ const Category = (props) => {
     return(
         <>
          <div style={{ display: "flex", height: "100vh" }}>
-                <nav className="navbar bg-light" style={{ width: "250px", flexDirection: "column", padding: "1rem" }}>
+                <nav className="navbar bg-light" style={{ width: "180px", flexDirection: "column", padding: "1rem"}}>
                     <ul className="navbar-nav" style={{ width: "100%"}}>
                         {
                             category && category.map((el, index) => (

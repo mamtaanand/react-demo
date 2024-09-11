@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AddModal from "./add";
 import EditModal from "./edit";
-import DeleteModal from "../Users/delete";
+import DeleteModal from "./delete";
 
 const Product = (props) => {
     const [product, setProduct] = useState([])
@@ -12,10 +12,10 @@ const Product = (props) => {
     
     const handleCloseAdd = () => setShowAdd(false);
     const handleCloseEdit = () => setShowEdit(false);
-    const handleCloseDelete = () => setShowDelete(false);
+    const handleDelete = () => setShowDelete(false);
 
-    const handleShowEdit = (user) => {
-        setCurrentProduct(user);
+    const handleShowEdit = (product) => {
+        setCurrentProduct(product);
         setShowEdit(true);
     };
 
@@ -70,15 +70,14 @@ const Product = (props) => {
                                         <button className="btn btn-danger mt-2 align-item-center" style={{width: "50%"}} onClick={() => handleShowDelete(product.id)}>Delete</button>
                                     </div>
                                 </>
-
                             </div>
                         ))
                     }
                 </div>
             </div>
-            <AddModal show={showAdd} handleClose={handleCloseAdd} />
+            <AddModal showAdd={showAdd} handleClose={handleCloseAdd} />
             <EditModal showEdit={showEdit} handleClose={handleCloseEdit} product={currentProduct} onUpdateProduct={handleUpdateProduct} />
-            <DeleteModal showDelete={showDelete} handleClose={handleCloseDelete} productId={product} />
+            <DeleteModal showDelete={showDelete} handleClose={handleDelete} productId={product} />
 
         </>
     )

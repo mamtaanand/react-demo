@@ -5,9 +5,10 @@ import './assets/css/joeblog.css';
 import Product from "./component/Product";
 import Category from "./component/Category";
 import Users from "./component/Users";
+import Single from "./component/Single";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
+import Limit from "./component/Limit";
+import Sort from "./component/Sort";
 
 function App() {
     return (
@@ -18,6 +19,10 @@ function App() {
           <Route path="/users" element={<Users />} /> 
           <Route path="/product" element={<Product />} />  
           <Route path="/category" element={<Category />} /> 
+          <Route path="/single" element={<Single />} />
+          <Route path="/limit" element={<Limit />} />
+          <Route path="/sort" element={<Sort />} />
+
           </Routes>
         </main>     
       </Router>
