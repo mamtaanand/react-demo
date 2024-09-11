@@ -4,6 +4,7 @@ import Product from "./component/Product";
 import Category from "./component/Category";
 import Limit from "./component/Limit";
 import Sort from "./component/Sort";
+import AdminProduct from "./component/Admin/Product";
 
 const Router = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ const Router = createBrowserRouter([
         path: '/sort',
         element: <Sort />
     },
+    {
+        path: '/admin/product',
+        element: <AdminProduct />
+    }
 
 ])
 export default Router;

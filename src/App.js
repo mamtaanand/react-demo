@@ -9,6 +9,7 @@ import Single from "./component/Single";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Limit from "./component/Limit";
 import Sort from "./component/Sort";
+import AdminProduct from "./component/Admin/Product";
 
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/single" element={<Single />} />
           <Route path="/limit" element={<Limit />} />
           <Route path="/sort" element={<Sort />} />
+          <Route path="/admin/product" element={<AdminProduct />} />
 
           </Routes>
         </main>     
