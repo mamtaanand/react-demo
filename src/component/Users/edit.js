@@ -29,7 +29,6 @@ const EditModal = ({ showEdit, handleClose, user, onUpdateUsers }) => {
             onUpdateUsers(json);
             handleClose();  
         })
-        .catch(err => console.error("Error updating user:", err));
     };
 
     if (!showEdit) return null;
@@ -45,13 +44,23 @@ const EditModal = ({ showEdit, handleClose, user, onUpdateUsers }) => {
                         <div className="col-md-6">
                             <Form.Group className="mb-3">
                                 <Form.Label>Name</Form.Label>
-                                <Form.Control type="text" name="name" value={editedUser.name || ''} onChange={handleChange} placeholder="Enter name" />
+                                <Form.Control 
+                                type="text" 
+                                name="name" 
+                                value={editedUser.name || ''} 
+                                onChange={handleChange} 
+                                placeholder="Enter name" />
                             </Form.Group>
                         </div>
                         <div className="col-md-6">
                             <Form.Group className="mb-3">
                                 <Form.Label>Username</Form.Label>
-                                <Form.Control type="text" name="username" value={editedUser.username || ''} onChange={handleChange} placeholder="Enter username"  />
+                                <Form.Control 
+                                type="text" 
+                                name="username" 
+                                value={editedUser.username || ''} 
+                                onChange={handleChange} 
+                                placeholder="Enter username"  />
                             </Form.Group>
                         </div>
                     </div>
@@ -59,7 +68,11 @@ const EditModal = ({ showEdit, handleClose, user, onUpdateUsers }) => {
                         <div className="col-md-12">
                             <Form.Group className="mb-3">
                                 <Form.Label>Email</Form.Label>
-                                <Form.Control type="email" name="email" value={editedUser.email || ''} onChange={handleChange} placeholder="Enter email" />
+                                <Form.Control 
+                                type="email" name="email" 
+                                value={editedUser.email || ''} 
+                                onChange={handleChange} 
+                                placeholder="Enter email" />
                             </Form.Group>
                         </div>
                     </div>

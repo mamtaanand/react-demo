@@ -34,7 +34,10 @@ const Header = (props) => {
                              </li> 
                              <li className="nav-item">
                                 <Link to='/admin/product' className="nav-link" style={{ color: "black", fontSize: "15px", fontFamily: "Arial" }}>Admin</Link>
-                             </li>                                                       
+                             </li> 
+                             <li className="nav-item">
+                                <Link to='/practice' className="nav-link" style={{ color: "black", fontSize: "15px", fontFamily: "Arial"}}>Practice</Link>
+                             </li>                                                      
                         </ul>
                     </div>
                 </div>

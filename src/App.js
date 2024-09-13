@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Limit from "./component/Limit";
 import Sort from "./component/Sort";
 import AdminProduct from "./component/Admin/Product";
+import Practice from "./component/Practice";
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="/limit" element={<Limit />} />
           <Route path="/sort" element={<Sort />} />
           <Route path="/admin/product" element={<AdminProduct />} />
+          <Route path="/practice" element={<Practice />} />
 
           </Routes>
         </main>     

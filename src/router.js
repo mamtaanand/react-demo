@@ -5,6 +5,7 @@ import Category from "./component/Category";
 import Limit from "./component/Limit";
 import Sort from "./component/Sort";
 import AdminProduct from "./component/Admin/Product";
+import Practice from "./component/Practice"
 
 const Router = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ const Router = createBrowserRouter([
     {
         path: '/admin/product',
         element: <AdminProduct />
+    },
+    {
+        path: '/practice',
+        element: <Practice />
     }
 
 ])
