@@ -28,16 +28,19 @@ const Header = (props) => {
                             </li>  
                             <li className="nav-item">
                                 <Link to="/limit" className="nav-link" style={{ color: "black", fontSize: "15px", fontFamily: "Arial" }}>Limit</Link>
-                             </li>
-                             <li className="nav-item">
+                            </li>
+                            <li className="nav-item">
                                 <Link to="/sort" className="nav-link" style={{ color: "black", fontSize: "15px", fontFamily: "Arial" }}>Sort</Link>
-                             </li> 
-                             <li className="nav-item">
+                            </li> 
+                            <li className="nav-item">
                                 <Link to='/admin/product' className="nav-link" style={{ color: "black", fontSize: "15px", fontFamily: "Arial" }}>Admin</Link>
-                             </li> 
-                             <li className="nav-item">
+                            </li> 
+                            <li className="nav-item">
                                 <Link to='/practice' className="nav-link" style={{ color: "black", fontSize: "15px", fontFamily: "Arial"}}>Practice</Link>
-                             </li>                                                      
+                            </li>  
+                            <li className="nav-item">
+                                <Link to='/cookie' className="nav-link" style={{ color: "black", fontSize: "15px", fontFamily: "Arial"}}>Cookie</Link>
+                            </li>                                                    
                         </ul>
                     </div>
                 </div>

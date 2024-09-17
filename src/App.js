@@ -11,6 +11,7 @@ import Limit from "./component/Limit";
 import Sort from "./component/Sort";
 import AdminProduct from "./component/Admin/Product";
 import Practice from "./component/Practice";
+import Cookie from "./component/Cookie";
 
 function App() {
     return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/sort" element={<Sort />} />
           <Route path="/admin/product" element={<AdminProduct />} />
           <Route path="/practice" element={<Practice />} />
+          <Route path="/cookie" element={<Cookie />}/>
 
           </Routes>
         </main>     

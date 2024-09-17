@@ -8,7 +8,8 @@ const DeleteModal = ({ showDelete, handleClose, productId }) => {
             method: "DELETE"
         })
         .then(res => res.json())
-        .then((json) => {
+        .then((json) => {            
+            
             handleClose();
                    })
     }
@@ -31,3 +32,6 @@ const DeleteModal = ({ showDelete, handleClose, productId }) => {
 }
 
 export default DeleteModal;
+
+
+

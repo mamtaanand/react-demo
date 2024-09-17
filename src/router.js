@@ -39,6 +39,10 @@ const Router = createBrowserRouter([
     {
         path: '/practice',
         element: <Practice />
+    },
+    {
+        path: '/cookie',
+        element: <Cookie />
     }
 
 ])
